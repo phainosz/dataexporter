@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+
+	<h:form>
+
+		<p:growl globalOnly="true" />
+		
+		<h:commandLink value="exportarPDF" immediate="true">
+			<p:dataExporter type="pdf" target="tabela" fileName="teste" pageOnly="true" />
+		</h:commandLink>
+		
+		<h:commandLink value="exportarXLS" immediate="true">
+			<p:dataExporter type="xls" target="tabela" fileName="teste" pageOnly="true" />
+		</h:commandLink>
+		
+		<p:dataTable id="tabela">
+			<p:column headerText="Texto">
+				<h:outputText value="valor" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+
+</h:body>
+</html>
